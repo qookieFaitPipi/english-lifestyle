@@ -1,0 +1,35 @@
+.sliderItem {
+  display: block;
+
+  .sliderItemContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .sliderItemImageBlock {
+      display: flex;
+      align-items: center;
+
+      .sliderItemImage {
+        width: 430px;
+        height: 270px;
+        border-radius: 20px;
+
+        @media (max-width: 767px) {
+          width: 350px;
+          height: 270px;
+        }
+      }
+    }
+
+    .sliderItemTextBlock {
+      margin-top: 20px;
+
+      .sliderItemText {
+        font-size: 20px;
+
+      }
+    }
+  }
+}

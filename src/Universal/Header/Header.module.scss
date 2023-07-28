@@ -1,0 +1,31 @@
+.header {
+  background-color: #fff;
+
+  .headerContent {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+
+    .headerInfoTel {
+      color: #000;
+      font-weight: 500;
+      font-size: 20px;
+      font-family: 'Roboto', sans-serif;
+
+    }
+
+    .headerInfoIcon {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+}

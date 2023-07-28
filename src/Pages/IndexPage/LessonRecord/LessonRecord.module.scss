@@ -1,0 +1,70 @@
+.lessonRecord {
+  margin-top: 0px;
+
+  .lessonRecordContent {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .lessonRecordLeftBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+
+      @media (max-width: 767px) {
+        align-items: center;
+      }
+
+      .lessonRecordTitle {
+        font-family: 'Roboto', sans-serif;        
+        font-weight: 600;
+        font-size: 34px;
+        color: #000;
+        line-height: 1.15em;
+
+        @media (max-width: 767px) {
+          text-align: center;
+        }
+      }
+      .lessonRecordText {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        color: #000;
+        line-height: 1.15em;
+        margin-top: 30px;
+      }
+      .lessonRecordFeedInput {
+        border-radius: 10px;
+        height: 40px;
+        width: 220px;
+        text-align: center;
+        outline: none;
+        border: 1px #808080 solid;
+      }
+      .lessonRecordInput {
+        padding: 15px;
+        background-color: red;
+        border-radius: 10px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 30px;
+      }    
+    }
+    .lessonRecordRightBlock {
+      display: block;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      .lessonRecordImage {
+        width: 400px;
+        height: 400px;
+        border-radius: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.about {
+  margin-top: 80px;
+
+  .aboutContent {
+    display: flex;
+    max-width: 1200px;
+    margin: 0px auto;
+
+    .aboutInfo {
+      background-color: #ebebeb;
+      width: 500px;
+      height: 400px;
+      padding: 30px;
+      border-radius: 10px;
+
+      .aboutTitleBlock {
+        display: flex;
+        flex-direction: column;
+
+        .aboutTitle {
+          font-weight: 600;
+          font-size: 34px;
+          color: #000;
+          line-height: 1.15em;
+          font-family: 'Roboto', sans-serif;
+        }
+
+        .aboutSupTitle {
+          font-size: 20px;
+          color: #000;
+          line-height: 1.15em;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-family: 'Roboto', sans-serif;
+        }
+      }
+
+      .aboutListBlock {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+
+        .aboutListItem {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .aboutImageBlock {
+      position: relative;
+
+      .aboutImage {
+        width: 900px;
+        height: 500px;
+        position: absolute;
+        left: -120px;
+        top: -30px;
+      }
+    }
+  }
+}

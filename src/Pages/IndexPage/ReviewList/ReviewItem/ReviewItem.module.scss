@@ -1,0 +1,30 @@
+.reviewItem {
+  margin-top: 30px;
+
+  @media (max-width: 767px) {
+    margin-top: 10px;
+  }
+
+  .reviewItemContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebebeb;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+      width: 250px;
+    }
+
+    .reviewItemText {
+      text-align: center;
+    }
+    .reviewItemAuthor {
+      font-weight: 600;
+      margin-top: 15px;
+    }
+  }
+}

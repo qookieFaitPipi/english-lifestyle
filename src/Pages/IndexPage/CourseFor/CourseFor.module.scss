@@ -1,0 +1,61 @@
+.courseFor {
+  margin-top: 40px;
+
+  .courseForContent {
+    display: flex;
+    flex-direction: column;
+    background-color: #FA5252;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .courseForTitleBlock {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      .courseForTitle {
+        font-size: 30px;
+        color: #fff;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+
+    .courseForItem {
+      display: flex;
+
+      .courseForImageBlock {
+        display: block;
+
+        .courseForImage {
+          width: 300px;
+          height: 200px;
+          border-radius: 10px;
+        }
+      }
+
+      .courseForTextBlock {
+        display: flex;
+        align-items: center;
+        margin: 40px;
+
+        .courseForText {
+          font-family: 'Roboto', sans-serif;
+          color: #fff;
+          font-size: 26px;
+
+        }
+      }
+      .courseForArrowBlock {
+        position: relative;
+
+        .courseForArrow {
+          position: absolute;
+          top: 60px;
+        }
+      }
+    }
+  }
+}

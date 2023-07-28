@@ -1,0 +1,82 @@
+.education {
+  margin-top: 70px;
+
+  .educationContent {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    .educationLeftBlock {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+
+      @media (max-width: 767px) {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .educationRightBlock {
+      display: flex;
+      flex-direction: column;
+      background-color: #ebebeb;
+      width: 50%;
+      padding: 20px;
+      border-radius: 10px;
+
+      @media (max-width: 767px) {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+
+      .educationTitleBlock {
+        display: flex;
+        
+        .educationTitle {
+          font-weight: 600;
+          font-size: 34px;
+          color: #000;
+          line-height: 1.15em;
+          font-family: 'Roboto', sans-serif;
+        }
+      }
+      .educationStepBlock {
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+        margin-top: 20px;
+
+        @media (max-width: 767px) {
+          align-items: start;
+        }
+
+        .educationStepTitle {
+          font-weight: 600;
+          font-size: 18px;
+          color: #000;
+          line-height: 1.15em;
+          font-family: 'Roboto', sans-serif;
+        }
+
+        .educationStepText {
+          font-size: 16px;
+          color: #000;
+          line-height: 1.15em;
+          text-align: end;
+
+          @media (max-width: 767px) {
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
+}

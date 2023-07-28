@@ -1,0 +1,35 @@
+.slider {
+  margin-top: 40px;
+
+  .sliderContent {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0px auto;
+
+    .sliderTitleBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .sliderTitle {
+        font-weight: 600;
+        font-size: 38px;
+        color: #000;
+        line-height: 1.15em;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+      }
+      .sliderSupTitle {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 25px;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+
+    .sliderList {
+      margin-top: 30px;
+    }
+  }
+}

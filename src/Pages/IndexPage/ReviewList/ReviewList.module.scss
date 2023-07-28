@@ -1,0 +1,28 @@
+.reviewList {
+  margin-top: 60px;
+
+  .reviewListContent {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0px auto;
+
+    .reviewListTitleBlock {
+      display: flex;
+      justify-content: center;
+
+      .reviewListTitle {
+        font-weight: 600;
+        font-size: 34px;
+        color: #000;
+        line-height: 1.15em;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+    
+    .sliderList {
+      margin-top: 30px;
+    }
+  }
+}
