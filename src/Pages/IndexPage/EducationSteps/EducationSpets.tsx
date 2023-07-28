@@ -6,7 +6,7 @@ const EducationSpets = () => {
     <div className={styles.education}>
       <div className={styles.educationContent}>
         <div className={styles.educationLeftBlock}>
-          <iframe width="360" height="615" src="https://www.youtube.com/embed/jNQXAC9IVRw" allow="autoplay; encrypted-media" />
+          <iframe width="340" height="615" src="https://www.youtube.com/embed/i0zBzVKuKC0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" />
         </div>
         <div className={styles.educationRightBlock}>
           <div className={styles.educationTitleBlock}>

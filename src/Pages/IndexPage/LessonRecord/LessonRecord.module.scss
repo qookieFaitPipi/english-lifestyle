@@ -1,5 +1,5 @@
 .lessonRecord {
-  margin-top: 0px;
+  margin-top: 40px;
 
   .lessonRecordContent {
     display: flex;
@@ -12,9 +12,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: start;
+      width: 40%;
 
       @media (max-width: 767px) {
         align-items: center;
+        width: 100%;
       }
 
       .lessonRecordTitle {
@@ -34,6 +36,10 @@
         color: #000;
         line-height: 1.15em;
         margin-top: 30px;
+
+        @media (max-width: 767px) {
+          text-align: center;
+        }
       }
       .lessonRecordFeedInput {
         border-radius: 10px;
@@ -45,12 +51,13 @@
       }
       .lessonRecordInput {
         padding: 15px;
-        background-color: red;
+        background-color: #FA5252;
         border-radius: 10px;
         font-weight: 600;
         color: #fff;
         cursor: pointer;
         margin-top: 30px;
+        text-decoration: none;
       }    
     }
     .lessonRecordRightBlock {

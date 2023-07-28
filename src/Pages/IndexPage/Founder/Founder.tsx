@@ -12,7 +12,7 @@ const Leader = () => {
       </div>
       <div className={styles.founderContent}>
         <div className={styles.founderInfoBlock}>
-          <div className={styles.founderInfoText}>Светлана Владимировна Белякова – дипломированный специалист в области лингвистики и межкультурной коммуникации. Стаж работы переводчиком с 2002 года.</div>
+          <div className={styles.founderInfoText}>Светлана Владимировна Белялова – дипломированный специалист в области лингвистики и межкультурной коммуникации. Стаж работы переводчиком с 2002 года.</div>
           <div className={styles.founderInfoText}>&bull;Ведущий переводчик ИНО-ТАСС <br /> ИТАР-ТАСС с 2002 по 2004 год.</div>
           <div className={styles.founderInfoText}>&bull;Заместитель начальника отдела переговоров <br /> РИА-НОВОСТИ с 2004 по 2010 год.</div>
           <div className={styles.founderInfoText}>Преподавательский стаж с 2010 года.</div>

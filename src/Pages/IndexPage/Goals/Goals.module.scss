@@ -1,7 +1,7 @@
-.courseFor {
+.goals {
   margin-top: 40px;
 
-  .courseForContent {
+  .goalsContent {
     display: flex;
     flex-direction: column;
     background-color: #FA5252;
@@ -9,49 +9,70 @@
     max-width: 1200px;
     margin: 0 auto;
 
-    .courseForTitleBlock {
+    .goalsTitleBlock {
       display: flex;
       justify-content: center;
       margin-top: 30px;
       margin-bottom: 30px;
 
-      .courseForTitle {
+      .goalsTitle {
         font-size: 30px;
         color: #fff;
         font-weight: 600;
         font-family: 'Roboto', sans-serif;
+
+        @media (max-width: 767px) {
+          text-align: center;
+        }
       }
     }
 
-    .courseForItem {
+    .goalsItem {
       display: flex;
 
-      .courseForImageBlock {
+      @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 !important;
+      }
+
+      .goalsImageBlock {
         display: block;
 
-        .courseForImage {
+        .goalsImage {
           width: 300px;
           height: 200px;
           border-radius: 10px;
         }
       }
 
-      .courseForTextBlock {
+      .goalsTextBlock {
         display: flex;
         align-items: center;
         margin: 40px;
 
-        .courseForText {
+        @media (max-width: 767px) {
+          order: 1;
+        }
+
+        .goalsText {
           font-family: 'Roboto', sans-serif;
           color: #fff;
           font-size: 26px;
 
+          @media (max-width: 767px) {
+            text-align: center !important;
+          }
         }
       }
-      .courseForArrowBlock {
+      .goalsArrowBlock {
         position: relative;
 
-        .courseForArrow {
+        @media (max-width: 767px) {
+          display: none;
+        }
+
+        .goalsArrow {
           position: absolute;
           top: 60px;
         }

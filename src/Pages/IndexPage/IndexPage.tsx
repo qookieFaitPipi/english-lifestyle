@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 // components
 import Header from "../../Universal/Header/Header";
 import LessonRecord from "./LessonRecord/LessonRecord";
-import CourseFor from "./CourseFor/CourseFor";
+import Goals from "./Goals/Goals";
 import TopSlider from "./TopSlider/TopSlider";
 import BottomSlider from "./BottomSlider/BottomSlider";
 import Advantages from "./Advantages/Advantages";
@@ -14,20 +14,11 @@ import ReviewList from "./ReviewList/ReviewList";
 import Founder from "./Founder/Founder";
 import Footer from "../../Universal/Footer/Footer";
 
-// modals
-import RecordModal from "../Modals/RecordModal/RecordModal";
-
 const IndexPage = () => {
-  const [recordModalActive, setRecordModalActive] = useState<boolean>(false);
-
   return(
     <section>
-      <Header />
-      <LessonRecord 
-        recordModalActive={recordModalActive}
-        setRecordModalActive={setRecordModalActive}
-      />
-      <CourseFor />
+      <LessonRecord />
+      <Goals />
       <TopSlider /> 
       <BottomSlider />
       <Advantages />
@@ -36,15 +27,7 @@ const IndexPage = () => {
       <EducationSpets />
       <ReviewList />
       <Founder />
-      <Footer 
-        recordModalActive={recordModalActive}
-        setRecordModalActive={setRecordModalActive}
-      />
-
-      <RecordModal 
-        recordModalActive={recordModalActive}
-        setRecordModalActive={setRecordModalActive}
-      />
+      <Footer />
     </section>
   );
 }

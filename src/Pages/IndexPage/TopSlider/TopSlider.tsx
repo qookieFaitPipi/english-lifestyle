@@ -9,7 +9,10 @@ import "react-multi-carousel/lib/styles.css";
 import SliderItem from '../../../Universal/SliderItem/SliderItem';
 
 // images
-import img1 from './../../../Assets/images/slider/img1.png';
+import slider1 from './../../../Assets/images/slider/slider1.png';
+import slider2 from './../../../Assets/images/slider/slider2.png';
+import slider3 from './../../../Assets/images/slider/slider3.png';
+
 
 interface ISlider {
   id: number,
@@ -40,18 +43,18 @@ const TopSlider = () => {
   const [topSliderItems, setTopSliderItems] = useState<ISlider[]>([
     {
       id: 1,
-      imageURL: img1,
-      text: 'Cоставить свое резюме'
+      imageURL: slider1,
+      text: 'Выполнять повседневные задачи'
     },
     {
       id: 2,
-      imageURL: img1,
+      imageURL: slider2,
       text: 'Cоставить свое резюме'
     },
     {
       id: 3,
-      imageURL: img1,
-      text: 'Cоставить свое резюме'
+      imageURL: slider3,
+      text: 'Пройти собеседование'
     },
   ])
 

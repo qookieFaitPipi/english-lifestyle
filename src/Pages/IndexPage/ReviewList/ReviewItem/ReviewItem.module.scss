@@ -1,5 +1,7 @@
 .reviewItem {
   margin-top: 30px;
+  display: flex;
+  align-items: center;
 
   @media (max-width: 767px) {
     margin-top: 10px;

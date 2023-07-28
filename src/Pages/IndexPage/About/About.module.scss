@@ -9,13 +9,16 @@
     .aboutInfo {
       background-color: #ebebeb;
       width: 500px;
-      height: 400px;
       padding: 30px;
       border-radius: 10px;
 
       .aboutTitleBlock {
         display: flex;
         flex-direction: column;
+        
+        @media (max-width: 767px) {
+          text-align: center;
+        }
 
         .aboutTitle {
           font-weight: 600;
@@ -39,6 +42,11 @@
         display: flex;
         flex-direction: column;
         width: 70%;
+          
+        @media (max-width: 767px) {
+          text-align: start;
+          margin: 0 auto;
+        }
 
         .aboutListItem {
           margin-bottom: 20px;
@@ -47,6 +55,10 @@
     }
     .aboutImageBlock {
       position: relative;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
 
       .aboutImage {
         width: 900px;
