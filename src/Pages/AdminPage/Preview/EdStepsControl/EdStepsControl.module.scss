@@ -1,0 +1,28 @@
+
+.edStepsControl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .edStepsControlInput {
+    width: 300px;
+    height: 30px;
+    margin-top: 50px;
+  }
+
+  .edStepsControlUpload {
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+  }
+
+  .edStepsControlSave {
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+  }
+}

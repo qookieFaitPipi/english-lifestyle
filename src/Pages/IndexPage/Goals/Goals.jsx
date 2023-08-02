@@ -21,7 +21,7 @@ const CourseFor = () => {
             <img className={styles.goalsImage} src={earth} alt="earth" />
           </div>
           <div className={styles.goalsTextBlock}>
-            <div className={styles.goalsText}>Тому, кто хочет <br /> переехать в <br /> англоговоряшие <br /> страны</div>
+            <div className={styles.goalsText}>Тому, кто хочет <br /> переехать в <br /> англоговорящие <br /> страны</div>
           </div>
           <div className={styles.goalsArrowBlock}>
             <img className={styles.goalsArrow} src={rightArrow} alt="arrow" />

@@ -35,8 +35,9 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+      justify-content: center;
       background-color: #ebebeb;
-      padding: 0px 20px 0px 20px;
+      padding: 20px;
       width: 50%;
       border-radius: 20px;
 
@@ -49,7 +50,9 @@
 
       .founderInfoText {
         margin-top: 20px;
-
+      }
+      .founderInfoText:first-child {
+        margin: 0px;
       }
     }
     .founderImageBlock {
@@ -66,7 +69,7 @@
       
       .founderImage {
         width: 300px;
-        height: 400px;
+        height: 450px;
         border-radius: 20px;
       }
       .founderImageText {

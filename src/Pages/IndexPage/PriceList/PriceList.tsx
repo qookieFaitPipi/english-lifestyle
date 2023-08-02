@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './PriceList.module.scss';
+import axios from 'axios';
 
 // images
 import tsconfig from './../../../Assets/images/tsconfig.png';
@@ -7,14 +8,34 @@ import tsconfig from './../../../Assets/images/tsconfig.png';
 // components
 import PriceItem from './PriceItem/PriceItem';
 
+// redux
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setPriceState } from '../../../redux/slices/priceSlice';
 
-const PriceList = () => {
+type priceItem = {
+  id: number;
+  value: string;
+  old_value: string;
+  points: string[];
+}
 
-  const arr1 = ['Определение уровня владения английским языком по CEFR', 'Пробное занятие с методистом'];
-  const arr2 = ['4 урока в месяц (раз в неделю)', 'Один урок – 45 минут', 'Составление резюме'];
-  const arr3 = ['8 уроков в месяц (два раза в неделю)', 'Один урок – 45 минут', 'Составление резюме'];
-  const arr4 = ['12 уроков в месяц (три раза в неделю)', 'Один урок – 45 минут', 'Составление резюме'];
+const PriceList: React.FC = () => {
+  const {priceList} = useSelector((state: any) => state.priceSlice);
+  const [state1, setState1] = useState([]);
+  const [state2, setState2] = useState([]);
+  const [state3, setState3] = useState([]);
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios.get('https://admin.english-lifestyle.ru/api/get_prices').then((response) => {
+      dispatch(setPriceState(response.data));
+      setState1(response.data[0]);
+      setState2(response.data[1]);
+      setState3(response.data[2]);
+    });
+  }, [])
 
   return (
     <div className={styles.priceList}>
@@ -30,14 +51,37 @@ const PriceList = () => {
         </div>
         <div className={styles.priceListMainContainer}>
           <div className={styles.priceListColumn}>
-            <PriceItem price={'БЕСПЛАТНО'} points={arr1} />
+            {state1.map((obj: priceItem) => 
+              <PriceItem
+                key={obj.id} 
+                id={obj.id} 
+                value={obj.value} 
+                old_value={obj.old_value} 
+                points={obj.points}
+              />
+            )}
           </div>
           <div className={styles.priceListColumn}>
-            <PriceItem price={'8000₽'} points={arr2} />
-            <PriceItem price={'16000₽'} points={arr3} />
+            {state2.map((obj: priceItem) => 
+              <PriceItem
+                key={obj.id} 
+                id={obj.id} 
+                value={obj.value} 
+                old_value={obj.old_value} 
+                points={obj.points}
+              />
+            )}
           </div>
           <div className={styles.priceListColumn}>
-            <PriceItem price={'24000₽'} points={arr4} />
+            {state3.map((obj: priceItem) => 
+              <PriceItem
+                key={obj.id} 
+                id={obj.id} 
+                value={obj.value} 
+                old_value={obj.old_value} 
+                points={obj.points}
+              />
+            )}
           </div>
         </div>
       </div>

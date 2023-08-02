@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import styles from './BottomSlider.module.scss';
+import axios from 'axios';
 
 // carousel
 import Carousel from "react-multi-carousel";
@@ -8,19 +9,21 @@ import "react-multi-carousel/lib/styles.css";
 // components
 import SliderItem from '../../../Universal/SliderItem/SliderItem';
 
-// images
-import slider4 from './../../../Assets/images/slider/slider4.png';
-import slider5 from './../../../Assets/images/slider/slider5.png';
-import slider6 from './../../../Assets/images/slider/slider6.png';
+// redux
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setBottomSliderState } from '../../../redux/slices/sliderSlice';
 
-
-interface ISlider {
+type sliderItemType = {
   id: number,
-  imageURL: string,
-  text: string,
+  image_url: string,
+  content: string,
 }
 
 const BottomSlider = () => {
+  const {bottomSliderList} = useSelector((state: any) => state.sliderSlice);
+  const dispatch = useDispatch();
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -40,23 +43,11 @@ const BottomSlider = () => {
     }
   };
 
-  const [bottomSliderItems, setBottomSliderItems] = useState<ISlider[]>([
-    {
-      id: 1,
-      imageURL: slider4,
-      text: 'Устроиться на работу'
-    },
-    {
-      id: 2,
-      imageURL: slider5,
-      text: 'Получить образование'
-    },
-    {
-      id: 3,
-      imageURL: slider6,
-      text: 'Интегрироваться в сообщество'
-    },
-  ])
+  useEffect(() => {
+    axios.get('https://admin.english-lifestyle.ru/api/get_bottom_slider').then((response) => {
+      dispatch(setBottomSliderState(response.data))
+    });
+  }, [])
 
   return (
     <div className={styles.slider}>
@@ -65,12 +56,12 @@ const BottomSlider = () => {
           <div className={styles.sliderSupTitle}>Без английского Вы не сможете</div>
         </div>
         <Carousel responsive={responsive} className={styles.sliderList}>
-          {bottomSliderItems.map(obj =>
+          {bottomSliderList.map((obj : sliderItemType) =>
             <SliderItem 
               key={obj.id} 
               id={obj.id} 
-              imageURL={obj.imageURL} 
-              text={obj.text} 
+              image_url={obj.image_url} 
+              content={obj.content} 
             />
           )}
         </Carousel>

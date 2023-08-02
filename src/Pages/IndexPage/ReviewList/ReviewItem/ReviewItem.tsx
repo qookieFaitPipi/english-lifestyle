@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './ReviewItem.module.scss';
 
-interface IReviewItem {
-  id: number,
-  text: string,
-  author: string
+type reviewItemType = {
+  id: number;
+  content: string;
+  author: string; 
 }
 
-const ReviewItem: React.FC<IReviewItem> = ({text, author}) => {
+const ReviewItem: React.FC<reviewItemType> = ({content, author}) => {
   return (
     <div className={styles.reviewItem}>
       <div className={styles.reviewItemContent}>
-        <div className={styles.reviewItemText}>{text}</div>
+        <div className={styles.reviewItemText}>{content}</div>
         <div className={styles.reviewItemAuthor}>{author}</div>
       </div>
     </div>

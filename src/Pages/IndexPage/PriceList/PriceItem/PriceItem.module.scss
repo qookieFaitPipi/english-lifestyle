@@ -16,13 +16,25 @@
     flex-direction: column;
     align-items: center;
 
-    .priceItemPrice {
-      font-family: 'Inter',Helvetica,Arial,Lucida,sans-serif;
-      font-size: 26px;
-      color: #000;
-      line-height: 1.15em;
-      text-align: end;
-    }
+      .priceItemPrice {
+        font-size: 26px;
+        color: #000;
+        line-height: 1.15em;
+        text-align: end;
+        font-family: 'Roboto', sans-serif;
+
+      }
+      .priceItemOldPrice {
+        font-size: 26px;
+        color: #000;
+        line-height: 1.15em;
+        text-align: end;
+        text-decoration: line-through;
+        text-decoration-color: #FA5252;
+        transform: rotate(-12deg);
+        font-family: 'Roboto', sans-serif;
+      }
+    
     .priceItemDescription {
       width: 100%;
       padding-bottom: 10px;

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './TopSlider.module.scss';
+import axios from 'axios';
 
 // carousel
 import Carousel from "react-multi-carousel";
@@ -8,19 +9,21 @@ import "react-multi-carousel/lib/styles.css";
 // components
 import SliderItem from '../../../Universal/SliderItem/SliderItem';
 
-// images
-import slider1 from './../../../Assets/images/slider/slider1.png';
-import slider2 from './../../../Assets/images/slider/slider2.png';
-import slider3 from './../../../Assets/images/slider/slider3.png';
+// redux
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setTopSliderState } from '../../../redux/slices/sliderSlice';
 
-
-interface ISlider {
+type sliderItemType = {
   id: number,
-  imageURL: string,
-  text: string,
+  image_url: string,
+  content: string,
 }
 
 const TopSlider = () => {
+  const {topSliderList} = useSelector((state: any) => state.sliderSlice);
+  const dispatch = useDispatch();
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -40,23 +43,11 @@ const TopSlider = () => {
     }
   };
 
-  const [topSliderItems, setTopSliderItems] = useState<ISlider[]>([
-    {
-      id: 1,
-      imageURL: slider1,
-      text: 'Выполнять повседневные задачи'
-    },
-    {
-      id: 2,
-      imageURL: slider2,
-      text: 'Cоставить свое резюме'
-    },
-    {
-      id: 3,
-      imageURL: slider3,
-      text: 'Пройти собеседование'
-    },
-  ])
+  useEffect(() => {
+    axios.get('https://admin.english-lifestyle.ru/api/get_top_slider').then((response) => {
+      dispatch(setTopSliderState(response.data))
+    });
+  }, [])
 
   return (
     <div className={styles.slider}>
@@ -66,12 +57,12 @@ const TopSlider = () => {
       </div>
       <div className={styles.sliderContent}>
         <Carousel responsive={responsive} className={styles.sliderList}>
-          {topSliderItems.map(obj =>
+          {topSliderList.map((obj : sliderItemType) =>
             <SliderItem 
               key={obj.id} 
               id={obj.id} 
-              imageURL={obj.imageURL} 
-              text={obj.text} 
+              image_url={obj.image_url} 
+              content={obj.content} 
             />
           )}
         </Carousel>

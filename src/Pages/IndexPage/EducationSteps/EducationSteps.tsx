@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './EducationSteps.module.scss';
+import axios from 'axios';
+
+// redux
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setVideoState } from '../../../redux/slices/videoSlice';
 
 const EducationSpets = () => {
+  const {url} = useSelector((state: any) => state.videoSlice);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios.get('https://admin.english-lifestyle.ru/api/get_video').then((response) => {
+      dispatch(setVideoState(response.data.url));
+    });
+  }, []);
+
   return (
     <div className={styles.education}>
       <div className={styles.educationContent}>
         <div className={styles.educationLeftBlock}>
-          <iframe width="340" height="615" src="https://www.youtube.com/embed/i0zBzVKuKC0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" />
+          <iframe width="340" height="615" src={url} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" />
         </div>
         <div className={styles.educationRightBlock}>
           <div className={styles.educationTitleBlock}>

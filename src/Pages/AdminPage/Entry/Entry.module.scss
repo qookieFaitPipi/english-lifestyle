@@ -1,16 +1,4 @@
-
-.disable {
-  position: absolute;
-  background-color: rgba(52, 58, 64, 0.6);
-  color:#fff;
-  display: none;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.6s;
-  z-index: -1;
-}
-
-.recordModal {
+.entry {
   position: fixed;
   top: 0;
   background-color: rgba(52, 58, 64, 0.6);
@@ -20,7 +8,7 @@
   transition: 0.6s;
   opacity: 1;
 
-  .recordModalContent {
+  .entryContent {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -31,7 +19,6 @@
     transform: translate(-50%, -50%);
     background-color: #fff;
     width: 480px;
-    height: 340px;
     border-radius: 5px;
     border: 1px #fff solid;
 
@@ -45,35 +32,35 @@
       width: 350px;
     }
 
-    .recordModalTopBlock {
+    .entryTopBlock {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 20px;
 
-      .recordModalTitle {
+      .entryTitle {
         font-family: 'Roboto', sans-serif;        
         color: #000;
         font-size: 20px;
       }
-      .recordModalDart {
+      .entryDart {
         font-family: 'Roboto', sans-serif;        
         color: #c42525;
         font-size: 26px;
         cursor: pointer;
       }
     }
-    .recordModalMainBlock {
+    .entryMainBlock {
       display: flex;
       flex-direction: column;
       align-items: center;
             
-      .recordInput {
+      .entryInput {
         width: 420px;
         height: 40px;
         border-radius: 5px;
         background-color: #ebebeb;
-        color: #fff;
+        color: #000;
         margin-top: 20px;
         border: none;
 
@@ -94,10 +81,11 @@
         text-align: center;
         text-decoration: none;
         color: #fff;
-        margin-top: 10px;
+        margin-top: 20px;
         border-radius: 5px;
         background-color: #FA5252;
         cursor: pointer;
+        margin-bottom: 20px;
 
         @media (max-width: 767px) {
           width: 190px;
