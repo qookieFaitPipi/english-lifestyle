@@ -25,9 +25,15 @@ export const sliderSlice = createSlice({
     setBottomSliderState: (state, action) => {
       state.bottomSliderList = action.payload;
     },
+    addTopSliderItem: (state, action) => {
+      state.topSliderList.push(action.payload);
+    },
+    deleteTopSliderItem: (state, action) => {
+      state.topSliderList.splice(Number(action.payload)-1, 1);
+    }
   },
 })
 
-export const { setTopSliderState, setBottomSliderState} = sliderSlice.actions
+export const { setTopSliderState, setBottomSliderState, addTopSliderItem, deleteTopSliderItem} = sliderSlice.actions
 
 export default sliderSlice.reducer 

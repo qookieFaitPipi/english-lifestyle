@@ -4,7 +4,7 @@ import styles from './Founder.module.scss';
 // images
 import photo from './../../../Assets/images/photo.jpg';
 
-const Leader = () => {
+const Leader: React.FC = () => {
   return (
     <div className={styles.founder}>
       <div className={styles.founderTitleBlock}>

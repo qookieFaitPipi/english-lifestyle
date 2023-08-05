@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './ReviewList.module.scss';
 import axios from 'axios';
 
@@ -14,11 +14,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setReviewsState } from '../../../redux/slices/reviewSlice';
 
-type reviewItemType = {
-  id: number;
-  content: string;
-  author: string; 
-}
+// types
+import { ReviewItemType } from '../../../@types/types';
 
 const ReviewList: React.FC = () => {
   const {reviewList} = useSelector((state: any) => state.reviewSlice);
@@ -43,13 +40,9 @@ const ReviewList: React.FC = () => {
     }
   };
 
-  const [state, setState] = useState([]);
-
-
   useEffect(() => {
     axios.get('https://admin.english-lifestyle.ru/api/get_reviews').then((response) => {
       dispatch(setReviewsState(response.data))
-      setState(response.data)
     });
   }, [])
 
@@ -60,7 +53,7 @@ const ReviewList: React.FC = () => {
           <div className={styles.reviewListTitle}>ОТЗЫВЫ</div>
         </div>
         <Carousel responsive={responsive} className={styles.sliderList}>
-          {state.map((obj: reviewItemType) => 
+          {reviewList.map((obj: ReviewItemType) => 
             <ReviewItem 
               key={obj.id}
               id={obj.id} 

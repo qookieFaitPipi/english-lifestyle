@@ -5,6 +5,10 @@
     margin-top: 40px;
   }
 
+  @media (max-width: 1024px) {
+    margin-top: 40px;
+  }
+
   .priceListContent {
     max-width: 1200px;
     margin: 0 auto;
@@ -14,6 +18,11 @@
       justify-content: space-evenly;
       
       @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media (max-width: 1024px) {
         flex-direction: column;
         align-items: center;
       }
@@ -38,6 +47,10 @@
           flex-direction: column;
         }
 
+        @media (max-width: 1024px) {
+          flex-direction: column;
+        }
+
         .priceListInfo {
           font-size: 16px;
           color: #000;
@@ -46,6 +59,11 @@
           font-family: 'Roboto', sans-serif;
 
           @media (max-width: 767px) {
+            order: 2;
+            text-align: center;
+          }
+
+          @media (max-width: 1024px) {
             order: 2;
             text-align: center;
           }
@@ -60,6 +78,11 @@
             order: 1;
             margin-top: 40px;
           }
+
+          @media (max-width: 1024px) {
+            order: 1;
+            margin-top: 40px;
+          }
         }
       }
     }
@@ -70,6 +93,11 @@
       margin-top: 40px;
 
       @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media (max-width: 1024px) {
         flex-direction: column;
         align-items: center;
       }

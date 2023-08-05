@@ -14,13 +14,10 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setTopSliderState } from '../../../redux/slices/sliderSlice';
 
-type sliderItemType = {
-  id: number,
-  image_url: string,
-  content: string,
-}
+// types
+import { SliderItemType } from '../../../@types/types';
 
-const TopSlider = () => {
+const TopSlider: React.FC = () => {
   const {topSliderList} = useSelector((state: any) => state.sliderSlice);
   const dispatch = useDispatch();
 
@@ -57,7 +54,7 @@ const TopSlider = () => {
       </div>
       <div className={styles.sliderContent}>
         <Carousel responsive={responsive} className={styles.sliderList}>
-          {topSliderList.map((obj : sliderItemType) =>
+          {topSliderList.map((obj : SliderItemType) =>
             <SliderItem 
               key={obj.id} 
               id={obj.id} 

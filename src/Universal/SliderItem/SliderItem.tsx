@@ -1,13 +1,10 @@
 import React from 'react';
 import styles from './SliderItem.module.scss';
 
-type sliderItemType = {
-  id: number,
-  image_url: string,
-  content: string,
-}
+// types
+import { SliderItemType } from '../../@types/types';
 
-const SliderItem: React.FC<sliderItemType> = ({image_url, content}) => {
+const SliderItem: React.FC<SliderItemType> = ({image_url, content}) => {
   return (
     <div className={styles.sliderItem}>
       <div className={styles.sliderItemContent}>

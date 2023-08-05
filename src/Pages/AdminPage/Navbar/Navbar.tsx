@@ -13,16 +13,16 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarContent}>
-        <div className={styles.navbarTitleBlock}>
-          <div className={styles.navbarTitle}>Admin-panel</div>
-        </div>
         <div className={styles.navbarTextBlock}>
           <div className={styles.navbarText} onClick={() => dispatch(setSelectedSlice(0))}>topSlider</div>
           <div className={styles.navbarText} onClick={() => dispatch(setSelectedSlice(1))}>bottomSlider</div>
           <div className={styles.navbarText} onClick={() => dispatch(setSelectedSlice(2))}>reviewList</div>
           <div className={styles.navbarText} onClick={() => dispatch(setSelectedSlice(3))}>priceList</div>
           <div className={styles.navbarText} onClick={() => dispatch(setSelectedSlice(4))}>video</div>
+        </div>
+        <div className={styles.navbarTextBlock}>
           <div className={styles.navbarText} onClick={() => dispatch(logout())}>logout</div>
+          <div className={styles.navbarText} onClick={() => console.log('save')}>Сохранить</div>
         </div>
       </div>
     </div>

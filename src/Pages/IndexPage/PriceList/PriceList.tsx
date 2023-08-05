@@ -11,32 +11,25 @@ import PriceItem from './PriceItem/PriceItem';
 // redux
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setPriceState } from '../../../redux/slices/priceSlice';
+import { setPriceState, setPriceItems } from '../../../redux/slices/priceSlice';
 
-type priceItem = {
-  id: number;
-  value: string;
-  old_value: string;
-  points: string[];
-}
+// types
+import { PriceItemType } from '../../../@types/types';
 
 const PriceList: React.FC = () => {
-  const {priceList} = useSelector((state: any) => state.priceSlice);
-  const [state1, setState1] = useState([]);
-  const [state2, setState2] = useState([]);
-  const [state3, setState3] = useState([]);
-
+  const {state1, state2, state3} = useSelector((state: any) => state.priceSlice);
   const dispatch = useDispatch();
 
   useEffect(() => {
     axios.get('https://admin.english-lifestyle.ru/api/get_prices').then((response) => {
       dispatch(setPriceState(response.data));
-      setState1(response.data[0]);
-      setState2(response.data[1]);
-      setState3(response.data[2]);
+      dispatch(setPriceItems({state1: response.data[0], state2: response.data[1], state3: response.data[2]}))
     });
   }, [])
 
+  console.log(state1, state2, state3);
+
+  
   return (
     <div className={styles.priceList}>
       <div className={styles.priceListContent}>
@@ -51,7 +44,7 @@ const PriceList: React.FC = () => {
         </div>
         <div className={styles.priceListMainContainer}>
           <div className={styles.priceListColumn}>
-            {state1.map((obj: priceItem) => 
+            {state1.map((obj: PriceItemType) => 
               <PriceItem
                 key={obj.id} 
                 id={obj.id} 
@@ -62,7 +55,7 @@ const PriceList: React.FC = () => {
             )}
           </div>
           <div className={styles.priceListColumn}>
-            {state2.map((obj: priceItem) => 
+            {state2.map((obj: PriceItemType) => 
               <PriceItem
                 key={obj.id} 
                 id={obj.id} 
@@ -73,7 +66,7 @@ const PriceList: React.FC = () => {
             )}
           </div>
           <div className={styles.priceListColumn}>
-            {state3.map((obj: priceItem) => 
+            {state3.map((obj: PriceItemType) => 
               <PriceItem
                 key={obj.id} 
                 id={obj.id} 

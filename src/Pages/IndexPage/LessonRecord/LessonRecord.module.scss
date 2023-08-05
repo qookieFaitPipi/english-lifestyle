@@ -19,6 +19,11 @@
         width: 100%;
       }
 
+      @media (max-width: 1024px) {
+        align-items: center;
+        width: 100%;
+      }
+
       .lessonRecordTitle {
         font-family: 'Roboto', sans-serif;        
         font-weight: 600;
@@ -27,6 +32,9 @@
         line-height: 1.15em;
 
         @media (max-width: 767px) {
+          text-align: center;
+        }
+        @media (max-width: 1024px) {
           text-align: center;
         }
       }
@@ -38,6 +46,9 @@
         margin-top: 30px;
 
         @media (max-width: 767px) {
+          text-align: center;
+        }
+        @media (max-width: 1024px) {
           text-align: center;
         }
       }
@@ -64,6 +75,10 @@
       display: block;
 
       @media (max-width: 767px) {
+        display: none;
+      }
+
+      @media (max-width: 1024px) {
         display: none;
       }
 

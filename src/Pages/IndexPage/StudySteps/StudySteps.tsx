@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from './EducationSteps.module.scss';
+import styles from './StudySteps.module.scss';
 import axios from 'axios';
 
 // redux
@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setVideoState } from '../../../redux/slices/videoSlice';
 
-const EducationSpets = () => {
+const EducationSpets: React.FC = () => {
   const {url} = useSelector((state: any) => state.videoSlice);
   const dispatch = useDispatch();
 

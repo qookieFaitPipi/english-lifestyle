@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './LessonRecord.module.scss';
 
-// react-router-dom
-import { Link } from 'react-router-dom';
-
 // images
 import study from './../../../Assets/images/study.jpg';
 

@@ -6,12 +6,12 @@ import reviewSlice from './slices/reviewSlice';
 import videoSlice from './slices/videoSlice';
 import sliderSlice from './slices/sliderSlice';
 import priceSlice from './slices/priceSlice';
+import adminSlice from './slices/adminSlice';
 
 // redux-persist
 import storage from 'redux-persist/lib/storage';
 import {persistReducer} from 'redux-persist';
 import { combineReducers } from '@reduxjs/toolkit';
-import adminSlice from './slices/adminSlice';
 
 const persistConfig = {
   key: 'root',
@@ -29,9 +29,13 @@ const reducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 
-
 export const store = configureStore({
-  reducer: persistedReducer
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+  getDefaultMiddleware({
+    serializableCheck: false,
+  }),
+
 })
 
 export type RootState = ReturnType<typeof store.getState>

@@ -3,7 +3,7 @@ import styles from './About.module.scss';
 
 import laptop from './../../../Assets/images/laptop.png';
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <div className={styles.about}>
       <div className={styles.aboutContent}>

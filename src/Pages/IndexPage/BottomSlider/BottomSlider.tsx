@@ -14,13 +14,10 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setBottomSliderState } from '../../../redux/slices/sliderSlice';
 
-type sliderItemType = {
-  id: number,
-  image_url: string,
-  content: string,
-}
+// types
+import { SliderItemType } from '../../../@types/types';
 
-const BottomSlider = () => {
+const BottomSlider: React.FC = () => {
   const {bottomSliderList} = useSelector((state: any) => state.sliderSlice);
   const dispatch = useDispatch();
 
@@ -56,7 +53,7 @@ const BottomSlider = () => {
           <div className={styles.sliderSupTitle}>Без английского Вы не сможете</div>
         </div>
         <Carousel responsive={responsive} className={styles.sliderList}>
-          {bottomSliderList.map((obj : sliderItemType) =>
+          {bottomSliderList.map((obj : SliderItemType) =>
             <SliderItem 
               key={obj.id} 
               id={obj.id} 

@@ -1,6 +1,11 @@
 .founder {
   margin-top: 70px;
 
+
+  @media (max-width: 767px) {
+    margin-top: 20px;
+  }
+
   .founderTitleBlock {
     display: flex;
     max-width: 1200px;

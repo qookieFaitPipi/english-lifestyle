@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Advantages.module.scss';
 
-const Advantages = () => {
+const Advantages: React.FC = () => {
   return (
     <div className={styles.advantages}>
       <div className={styles.advantagesTitleBlock}>

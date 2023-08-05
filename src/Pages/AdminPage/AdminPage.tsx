@@ -6,12 +6,12 @@ import Preview from './Preview/Preview';
 
 import Entry from './Entry/Entry';
 
-
 // redux
 import { useSelector } from 'react-redux';
 
 const AdminPage = () => {
   const {userLogin} = useSelector((state: any) => state.adminSlice);
+
   return (
     <section>
       {userLogin ?

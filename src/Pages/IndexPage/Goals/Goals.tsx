@@ -9,7 +9,7 @@ import boy from './../../../Assets/images/boy.jpg';
 import leftArrow from './../../../Assets/images/arrows/left-arrow.png';
 import rightArrow from './../../../Assets/images/arrows/right-arrow.png';
 
-const CourseFor = () => {
+const CourseFor: React.FC = () => {
   return (
     <div className={styles.goals}>
       <div className={styles.goalsContent}>

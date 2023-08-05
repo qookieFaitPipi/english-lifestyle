@@ -14,8 +14,11 @@ interface topSliderSliceState {
   priceList: priceItem[];
 }
 
-const initialState: topSliderSliceState = {
+const initialState: any = {
   priceList: [],
+  state1: [],
+  state2: [],
+  state3: []
 }
 export const priceSlice = createSlice({
   name: 'price',
@@ -23,10 +26,33 @@ export const priceSlice = createSlice({
   reducers: {
     setPriceState: (state, action) => {
       state.priceList = action.payload;
+    },
+    setPriceItems: (state, action) => {
+      state.state1 = action.payload.state1;
+      state.state2 = action.payload.state2;
+      state.state3 = action.payload.state3;
+    },
+    addPriceItem: (state, action) => {
+      if(Number(action.payload.addNum) === 1) {
+        state.state1.push({id: action.payload.id, value: action.payload.value, old_value: action.payload.oldValue, points: action.payload.points})
+       } else if(Number(action.payload.addNum) === 2) {
+        state.state2.push({id: action.payload.id, value: action.payload.value, old_value: action.payload.oldValue, points: action.payload.points})
+      } else if(Number(action.payload.addNum) === 3) {
+        state.state3.push({id: action.payload.id, value: action.payload.value, old_value: action.payload.oldValue, points: action.payload.points})
+      }
+    },
+    deletePriceItem: (state, action) => {
+      if(Number(action.payload) === 1) {
+        state.state1.splice(state.state1.length-1, 1);
+       } else if(Number(action.payload) === 2) {
+        state.state2.splice(state.state2.length-1, 1);
+      } else if(Number(action.payload) === 3) {
+        state.state3.splice(state.state3.length-1, 1);
+      }
     }
   },
 })
 
-export const { setPriceState } = priceSlice.actions
+export const { setPriceState, addPriceItem, setPriceItems, deletePriceItem } = priceSlice.actions
 
 export default priceSlice.reducer 
