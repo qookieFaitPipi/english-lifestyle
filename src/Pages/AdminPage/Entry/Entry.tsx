@@ -6,9 +6,8 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 // redux
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { login } from '../../../redux/slices/adminSlice';
+import { login } from '../../../redux/slices/userSlice';
 
 const Entry: React.FC = () => {
   const [userLogin, serUserLogin] = useState<string>('');
@@ -22,11 +21,13 @@ const Entry: React.FC = () => {
       'password': userPassword
     }
     try {
-      await axios.post('https://admin.english-lifestyle.ru/admin/api/login', userData)
-      dispatch(login({
-        userLogin: userLogin,
-        isEntered: true,
-      }))
+      await axios.post('https://admin.english-lifestyle.ru/admin/api/login', userData).then((res) => {
+        dispatch(login({
+          userLogin: userLogin,
+          isEntered: true,
+          accessToken: res.data
+        }))
+      })
     } catch(err) {
       console.log(err);
     }

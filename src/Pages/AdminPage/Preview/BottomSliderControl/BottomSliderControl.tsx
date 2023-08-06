@@ -1,23 +1,22 @@
-import React, { useRef, useState } from 'react';
-import styles from './TopSliderControl.module.scss';
+import React, {useState} from 'react';
+import styles from './BottomSliderControl.module.scss';
 import axios from 'axios';
 
 // components
-import TopSlider from '../../../IndexPage/TopSlider/TopSlider';
+import BottomSlider from '../../../IndexPage/BottomSlider/BottomSlider';
 
 // redux
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteTopSliderItem, addTopSliderItem } from '../../../../redux/slices/sliderSlice';
+import { deleteBottomSliderItem, addBottomSliderItem } from '../../../../redux/slices/sliderSlice';
 
-const TopSliderControl: React.FC = () => {
+const BottomSliderControl: React.FC = () => {
   const [controlDelNum, setControlDelNum] = useState<string>('');
   const [controlFile, setControlFile] = useState<any>();
   const [controlContent, setControlContent] = useState('');
   const dispatch = useDispatch();
 
   const {accessToken} = useSelector((state: any) => state.userSlice);
-
 
   const addItem = () => {
     setControlContent('');
@@ -28,7 +27,7 @@ const TopSliderControl: React.FC = () => {
 
     try {
       axios.post('https://admin.english-lifestyle.ru/admin/api/add_image', form_data, {headers: { Authorization: 'Bearer ' + accessToken.access_token }}).then((res) => {
-        dispatch(addTopSliderItem({id: -1, image_url: 'https://admin.english-lifestyle.ru/api/image/' + controlFile.name, content: controlContent}))
+        dispatch(addBottomSliderItem({id: -1, image_url: 'https://admin.english-lifestyle.ru/api/image/' + controlFile.name, content: controlContent}))
       });
     } catch(err) {
       console.log(err);
@@ -36,14 +35,13 @@ const TopSliderControl: React.FC = () => {
   }
 
   const deleteItem = () => {
-    dispatch(deleteTopSliderItem(controlDelNum));
+    dispatch(deleteBottomSliderItem(controlDelNum));
     setControlDelNum('');
   }
-
   return (
     <div className={styles.control}>
-      <TopSlider />
-
+      <BottomSlider />
+      
       <div className={styles.controlTitle}>ControlPart</div>
       <div className={styles.controlContent}>
         <div className={styles.leftBlock}>
@@ -63,4 +61,4 @@ const TopSliderControl: React.FC = () => {
   )
 }
 
-export default React.memo(TopSliderControl);
+export default React.memo(BottomSliderControl);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './EdStepsControl.module.scss';
+import styles from './StudyStepsControl.module.scss';
 
 // components
 import EducationSpets from '../../../IndexPage/StudySteps/StudySteps';
@@ -8,13 +8,13 @@ import EducationSpets from '../../../IndexPage/StudySteps/StudySteps';
 import { useDispatch } from 'react-redux';
 import { setVideoState } from '../../../../redux/slices/videoSlice';
 
-const EdStepsControl = () => {
-  const [link, setLink] = useState('');
+const StudyStepsControl: React.FC = () => {
+  const [controlLink, setControlLink] = useState<string>('')
   const dispatch = useDispatch();
 
   const uploadVideo = () => {
-    dispatch(setVideoState(link));
-    setLink('');
+    dispatch(setVideoState(controlLink));
+    setControlLink('');
   }
 
   return (
@@ -22,11 +22,11 @@ const EdStepsControl = () => {
       <EducationSpets />
       <div className={styles.controlTitle}>ControlPart</div>
       <div className={styles.controlContent}>
-        <input className={styles.controlLinkInput} onChange={(e) => setLink(e.target.value)} placeholder='Вставьте ссылку' type="text" />
+        <input className={styles.controlLinkInput} value={controlLink} onChange={(e) => setControlLink(e.target.value)} placeholder='Вставьте ссылку' type="text" />
         <div className={styles.cntrolUploadInput} onClick={uploadVideo}>Загрузить видео</div>
       </div>
     </div>
   )
 }
 
-export default React.memo(EdStepsControl);
+export default React.memo(StudyStepsControl);

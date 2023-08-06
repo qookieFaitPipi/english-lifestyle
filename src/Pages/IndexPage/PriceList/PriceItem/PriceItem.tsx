@@ -4,7 +4,7 @@ import styles from './PriceItem.module.scss';
 // types
 import { PriceItemType } from '../../../../@types/types';
 
-const PriceItem: React.FC<PriceItemType> = ({id, value, old_value, points}) => {
+const PriceItem: React.FC<PriceItemType> = ({value, old_value, points}) => {
   return (
     <div className={styles.priceItem}>
       <div className={styles.priceItemContent}>

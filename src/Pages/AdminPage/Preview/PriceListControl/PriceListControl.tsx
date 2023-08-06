@@ -8,30 +8,30 @@ import PriceList from '../../../IndexPage/PriceList/PriceList';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { addPriceItem, deletePriceItem } from '../../../../redux/slices/priceSlice';
-const PriceListControl = () => {
-  const {priceList, state1, state2, state3} = useSelector((state: any) => state.priceSlice);
-  const [deleteNum, setDeleteNum] = useState('');
+const PriceListControl: React.FC = () => {
+  const {state1, state2, state3} = useSelector((state: any) => state.priceSlice);
+  const [controlDelNum, setControlDelNum] = useState<string>('');
 
-  const [addNum, setAddNum] = useState('');
-  const [value, setValue] = useState('');
-  const [oldValue, setOldValue] = useState('');
-  const [points, setPoints] = useState('');
+  const [controlAddNum, setControlAddNum] = useState<string>('');
+  const [controlValue, setControlValue] = useState<string>('');
+  const [controlOldValue, setControlOldValue] = useState<string>('');
+  const [controlPoints, setControlPoints] = useState<string>('');
 
   const dispatch = useDispatch();
 
   const addItem = () => {
-    if(addNum === '1') {
-      dispatch(addPriceItem({id: state1.length+1, addNum: addNum, value: value, oldValue: oldValue, points: points.split('|')}));
-    } else if(addNum === '2') {
-      dispatch(addPriceItem({id: state2.length+1, addNum: addNum, value: value, oldValue: oldValue, points: points.split('|')}));
-    } else if(addNum === '3') {
-      dispatch(addPriceItem({id: state3.length+1, addNum: addNum, value: value, oldValue: oldValue, points: points.split('|')}));
+    if(controlAddNum === '1') {
+      dispatch(addPriceItem({id: -1, addNum: controlAddNum, value: controlValue, oldValue: controlOldValue, points: controlPoints.split('|')}));
+    } else if(controlAddNum === '2') {
+      dispatch(addPriceItem({id: -1, addNum: controlAddNum, value: controlValue, oldValue: controlOldValue, points: controlPoints.split('|')}));
+    } else if(controlAddNum === '3') {
+      dispatch(addPriceItem({id: -1, addNum: controlAddNum, value: controlValue, oldValue: controlOldValue, points: controlPoints.split('|')}));
     }
   }
 
   const deleteItem = () => {
-    dispatch(deletePriceItem(deleteNum));
-    setDeleteNum('');
+    dispatch(deletePriceItem(controlDelNum));
+    setControlDelNum('');
   }
 
   return (
@@ -42,15 +42,15 @@ const PriceListControl = () => {
       <div className={styles.controlContent}>
         <div className={styles.leftBlock}>
           <div className={styles.leftBlockTitle}>Удаление элемента</div>
-          <input className={styles.leftBlockInput} value={deleteNum} onChange={(e) => setDeleteNum(e.target.value)} type="text" placeholder='Введите номер колонки' />
+          <input className={styles.leftBlockInput} value={controlDelNum} onChange={(e) => setControlDelNum(e.target.value)} type="text" placeholder='Введите номер колонки' />
           <div className={styles.leftBlockContinue} onClick={deleteItem}>Удалить по номеру</div>
         </div>
         <div className={styles.rightBlock}>
           <div className={styles.rightBlockTitle}>Добавление элемента</div>
-          <input className={styles.rightBlockInput} value={addNum} onChange={(e) => setAddNum(e.target.value)} type="text" placeholder='Введите номер колонки' />
-          <input className={styles.rightBlockInput} value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder='Введите новую Цену' />
-          <input className={styles.rightBlockInput} value={oldValue} onChange={(e) => setOldValue(e.target.value)} type="text" placeholder='Введите старую Цену' />
-          <input className={styles.rightBlockInput} value={points} onChange={(e) => setPoints(e.target.value)} type="text" placeholder='Введите условия' />
+          <input className={styles.rightBlockInput} value={controlAddNum} onChange={(e) => setControlAddNum(e.target.value)} type="text" placeholder='Введите номер колонки' />
+          <input className={styles.rightBlockInput} value={controlValue} onChange={(e) => setControlValue(e.target.value)} type="text" placeholder='Введите новую Цену' />
+          <input className={styles.rightBlockInput} value={controlOldValue} onChange={(e) => setControlOldValue(e.target.value)} type="text" placeholder='Введите старую Цену' />
+          <input className={styles.rightBlockInput} value={controlPoints} onChange={(e) => setControlPoints(e.target.value)} type="text" placeholder='Введите условия' />
           <div className={styles.rightBlockContinue} onClick={addItem}>Добавить</div>
         </div>
       </div>

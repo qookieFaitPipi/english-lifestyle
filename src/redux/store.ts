@@ -6,7 +6,7 @@ import reviewSlice from './slices/reviewSlice';
 import videoSlice from './slices/videoSlice';
 import sliderSlice from './slices/sliderSlice';
 import priceSlice from './slices/priceSlice';
-import adminSlice from './slices/adminSlice';
+import userSlice from './slices/userSlice';
 
 // redux-persist
 import storage from 'redux-persist/lib/storage';
@@ -24,7 +24,7 @@ const reducer = combineReducers({
   videoSlice: videoSlice,
   sliderSlice: sliderSlice,
   priceSlice: priceSlice,
-  adminSlice: adminSlice,
+  userSlice: userSlice,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -35,7 +35,6 @@ export const store = configureStore({
   getDefaultMiddleware({
     serializableCheck: false,
   }),
-
 })
 
 export type RootState = ReturnType<typeof store.getState>

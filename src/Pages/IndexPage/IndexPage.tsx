@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // components
 import LessonRecord from "./LessonRecord/LessonRecord";
@@ -13,24 +13,7 @@ import ReviewList from "./ReviewList/ReviewList";
 import Founder from "./Founder/Founder";
 import Footer from "../../Universal/Footer/Footer";
 
-import { useNavigate } from "react-router-dom";
-
-const IndexPage = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const onKeypress = e => {
-      if(e.key === '.') {
-        navigate('/admin')
-      }
-    }
-    document.addEventListener('keypress', onKeypress);
-  
-    return () => {
-      document.removeEventListener('keypress', onKeypress);
-    };
-  }, []);
-
-  
+const IndexPage: React.FC = () => {  
   return(
     <section>
       <LessonRecord />

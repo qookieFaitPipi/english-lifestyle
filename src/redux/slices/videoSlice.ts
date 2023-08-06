@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-interface videoSliceState {
-  url: string | null;
-}
+// types
+import { VideoSliceState } from '../../@types/types';
 
-const initialState: videoSliceState = {
-  url: null,
+const initialState: VideoSliceState = {
+  url: undefined,
 }
 export const videoSlice = createSlice({
   name: 'video',
@@ -15,7 +14,7 @@ export const videoSlice = createSlice({
       state.url = action.payload;
     },
     deleteVideo: (state) => {
-      state.url = null;
+      state.url = undefined;
     }
   },
 })

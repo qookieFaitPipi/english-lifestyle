@@ -5,27 +5,19 @@ import styles from './Preview.module.scss';
 import { useSelector } from 'react-redux';
 
 // components
-import TopSlider from '../../IndexPage/TopSlider/TopSlider';
-import BottomSlider from '../../IndexPage/BottomSlider/BottomSlider';
-import ReviewList from '../../IndexPage/ReviewList/ReviewList';
-import PriceList from '../../IndexPage/PriceList/PriceList';
-import EducationSteps from '../../IndexPage/StudySteps/StudySteps';
-
-
-import EdStepsControl from './EdStepsControl/EdStepsControl';
+import StudyStepsControl from './StudyStepsControl/StudyStepsControl';
 import ReviewListControl from './ReviewListControl/ReviewListControl';
 import TopSliderControl from './TopSliderControl/TopSliderControl';
+import BottomSliderControl from './BottomSliderControl/BottomSliderControl';
 import PriceListControl from './PriceListControl/PriceListControl';
 
-const Preview = () => {
-  const {selectedSlice} = useSelector((state: any) => state.adminSlice);
-
-
+const Preview: React.FC = () => {
+  const {selectedSlice} = useSelector((state: any) => state.userSlice);
 
   return (
     <div className={styles.preview}>
       <div className={styles.previewContent}>
-        {selectedSlice === 0 ? <TopSliderControl /> : selectedSlice === 1 ? <BottomSlider /> : selectedSlice === 2 ? <ReviewListControl /> : selectedSlice === 3 ? <PriceListControl /> : selectedSlice === 4 ? <EdStepsControl /> : <div>null</div>}
+        {selectedSlice === 0 ? <TopSliderControl /> : selectedSlice === 1 ? <BottomSliderControl /> : selectedSlice === 2 ? <ReviewListControl /> : selectedSlice === 3 ? <PriceListControl /> : selectedSlice === 4 ? <StudyStepsControl /> : <div>null</div>}
       </div>
     </div>
   )

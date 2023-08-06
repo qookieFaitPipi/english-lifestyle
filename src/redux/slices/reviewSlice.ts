@@ -1,16 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-type reviewItem = {
-  id: number;
-  content: string;
-  author: string; 
-}
+// types
+import { ReviewSliceState } from '../../@types/types';
 
-interface reviewSliceState {
-  reviewList: reviewItem[];
-}
-
-const initialState: reviewSliceState = {
+const initialState: ReviewSliceState = {
   reviewList: [],
 }
 export const reviewSlice = createSlice({

@@ -1,17 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
-type sliderItem = {
-  id: number;
-  url: string | null;
-  content: string | null;
-}
+// types
+import { TopSliderSliceState } from '../../@types/types';
 
-interface topSliderSliceState {
-  topSliderList: sliderItem[];
-  bottomSliderList: sliderItem[];
-}
-
-const initialState: topSliderSliceState = {
+const initialState: TopSliderSliceState = {
   topSliderList: [],
   bottomSliderList: [],
 }
@@ -22,18 +14,25 @@ export const sliderSlice = createSlice({
     setTopSliderState: (state, action) => {
       state.topSliderList = action.payload;
     },
-    setBottomSliderState: (state, action) => {
-      state.bottomSliderList = action.payload;
-    },
     addTopSliderItem: (state, action) => {
       state.topSliderList.push(action.payload);
     },
     deleteTopSliderItem: (state, action) => {
       state.topSliderList.splice(Number(action.payload)-1, 1);
-    }
+    },
+
+    setBottomSliderState: (state, action) => {
+      state.bottomSliderList = action.payload;
+    },
+    addBottomSliderItem: (state, action) => {
+      state.bottomSliderList.push(action.payload);
+    },
+    deleteBottomSliderItem: (state, action) => {
+      state.bottomSliderList.splice(Number(action.payload)-1, 1);
+    },
   },
 })
 
-export const { setTopSliderState, setBottomSliderState, addTopSliderItem, deleteTopSliderItem} = sliderSlice.actions
+export const { setTopSliderState, setBottomSliderState, addTopSliderItem, deleteTopSliderItem, addBottomSliderItem, deleteBottomSliderItem } = sliderSlice.actions
 
 export default sliderSlice.reducer 

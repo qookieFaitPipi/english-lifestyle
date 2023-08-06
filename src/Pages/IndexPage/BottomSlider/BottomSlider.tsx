@@ -41,7 +41,7 @@ const BottomSlider: React.FC = () => {
   };
 
   useEffect(() => {
-    axios.get('https://admin.english-lifestyle.ru/api/get_bottom_slider').then((response) => {
+    axios.get('http://alexavr.ru:25003/api/get_bottom_slider').then((response) => {
       dispatch(setBottomSliderState(response.data))
     });
   }, [])

@@ -1,21 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-type price = {
-  id: number;
-  value: number;
-  pointers: string[];
-}
+// types
+import { PriceSliceState } from '../../@types/types';
 
-type priceItem = {
-  priceItem: price[]
-}
-
-interface topSliderSliceState {
-  priceList: priceItem[];
-}
-
-const initialState: any = {
-  priceList: [],
+const initialState: PriceSliceState = {
   state1: [],
   state2: [],
   state3: []
@@ -24,9 +12,6 @@ export const priceSlice = createSlice({
   name: 'price',
   initialState: initialState,
   reducers: {
-    setPriceState: (state, action) => {
-      state.priceList = action.payload;
-    },
     setPriceItems: (state, action) => {
       state.state1 = action.payload.state1;
       state.state2 = action.payload.state2;
@@ -53,6 +38,6 @@ export const priceSlice = createSlice({
   },
 })
 
-export const { setPriceState, addPriceItem, setPriceItems, deletePriceItem } = priceSlice.actions
+export const { setPriceItems, addPriceItem, deletePriceItem } = priceSlice.actions
 
 export default priceSlice.reducer 

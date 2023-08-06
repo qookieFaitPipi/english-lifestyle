@@ -9,8 +9,8 @@ import Entry from './Entry/Entry';
 // redux
 import { useSelector } from 'react-redux';
 
-const AdminPage = () => {
-  const {userLogin} = useSelector((state: any) => state.adminSlice);
+const AdminPage: React.FC = () => {
+  const {userLogin} = useSelector((state: any) => state.userSlice);
 
   return (
     <section>
@@ -18,7 +18,6 @@ const AdminPage = () => {
       <>
         <Navbar />
         <Preview />
-        
       </>
       :
       <>
