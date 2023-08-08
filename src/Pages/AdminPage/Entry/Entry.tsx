@@ -42,7 +42,7 @@ const Entry: React.FC = () => {
         </div>
         <div className={styles.entryMainBlock}>
           <input className={styles.entryInput} value={userLogin} onChange={e => serUserLogin(e.target.value)} placeholder='login' type="text" />
-          <input className={styles.entryInput} value={userPassword} onChange={e => serUserPassword(e.target.value)} placeholder='password' type="text" />
+          <input className={styles.entryInput} value={userPassword} onChange={e => serUserPassword(e.target.value)} placeholder='password' type="password" />
           <div className={styles.entryContinueInput} onClick={userEntry}>Войти</div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const BottomSlider: React.FC = () => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 5
+      items: 2
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -41,7 +41,7 @@ const BottomSlider: React.FC = () => {
   };
 
   useEffect(() => {
-    axios.get('http://alexavr.ru:25003/api/get_bottom_slider').then((response) => {
+    axios.get('https://admin.english-lifestyle.ru/api/get_bottom_slider').then((response) => {
       dispatch(setBottomSliderState(response.data))
     });
   }, [])

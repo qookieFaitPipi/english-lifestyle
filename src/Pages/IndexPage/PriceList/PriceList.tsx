@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './PriceList.module.scss';
 import axios from 'axios';
 
@@ -22,7 +22,7 @@ const PriceList: React.FC = () => {
 
   useEffect(() => {
     axios.get('https://admin.english-lifestyle.ru/api/get_prices').then((response) => {
-      dispatch(setPriceItems({state1: response.data[0], state2: response.data[1], state3: response.data[2]}))
+      dispatch(setPriceItems({state1: response.data[0], state2: response.data[1], state3: response.data[2]}));
     });
   }, [])
   
