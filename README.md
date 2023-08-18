@@ -12,5 +12,6 @@ Website for <a href="https://immigrate.english-lifestyle.ru/">«Школа ан�
 
 ### 🖥 &nbsp;Demo :
 <a href='https://github.com/qookieFaitPipi/english-lifestyle/assets/58183484/7203bd30-aaa1-46de-a66f-cb55eb75cc8e'>Demo</a>
+
 Для загрузки модулей необходимо: `yarn install`<br/>
 Для запуска frontend-части необходимо: `yarn start`<br/>
