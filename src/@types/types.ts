@@ -1,6 +1,6 @@
 // types
 export type SliderItemType = {
-  id: number,
+  id: number;
   image_url: string | undefined;
   content: string;
 }
@@ -18,30 +18,30 @@ export type ReviewItemType = {
   author: string; 
 }
 
-// SliderSlice
+// sliderSlice
 export interface TopSliderSliceState {
   topSliderList: SliderItemType[];
   bottomSliderList: SliderItemType[];
 }
 
-// StudyStepsSlice
+// studyStepsSlice
 export interface VideoSliceState {
   url: string | undefined;
 }
 
-// ReviewListSlice
+// reviewListSlice
 export interface ReviewSliceState {
   reviewList: ReviewItemType[];
 }
 
-// PriceListSlice
+// priceListSlice
 export interface PriceSliceState {
   state1: PriceItemType[];
   state2: PriceItemType[];
   state3: PriceItemType[];
 }
 
-// AdminSlice
+// adminSlice
 export interface UserSliceState {
   userLogin: string | undefined;
   isEntered: boolean;
